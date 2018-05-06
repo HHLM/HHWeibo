@@ -28,7 +28,7 @@ extension UIButton {
         
         sizeToFit()
     }
-    convenience init(title: String, fontSize: CGFloat, color: UIColor, imageName: String) {
+    convenience init(title: String, fontSize: CGFloat = 16, color: UIColor, imageName: String) {
         
         self.init(title: title, color: color, backImageName: imageName)
         
@@ -37,6 +37,16 @@ extension UIButton {
         sizeToFit()
     }
     
+    convenience init(title:String,fontSize:CGFloat = 16,target:AnyObject?,action:Selector,isBack:Bool = false) {
+        let btn:UIButton = UIButton(title: title, color: .darkGray, imageName: "111")
+        if isBack {
+            btn.setImage(UIImage(named: ""), for: .normal)
+            btn.setImage(UIImage(named: ""), for: .highlighted)
+            btn.sizeToFit()
+        }
+            btn.addTarget(target, action: action, for: .touchUpInside)
+        self.init()
+    }
     
     open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let view = super.hitTest(point, with: event)
