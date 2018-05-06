@@ -23,6 +23,8 @@
 		0437CC80209C70FE00BC529C /* HHAdminController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437CC7F209C70FE00BC529C /* HHAdminController.swift */; };
 		0437CC82209C710B00BC529C /* HHMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437CC81209C710B00BC529C /* HHMessageController.swift */; };
 		0437CC84209C756A00BC529C /* HHBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437CC83209C756A00BC529C /* HHBaseNavigationController.swift */; };
+		04E1394B209EF9B600ABDCB1 /* Button+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1394A209EF9B600ABDCB1 /* Button+Ext.swift */; };
+		04E13950209F2F9D00ABDCB1 /* HHTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1394F209F2F9D00ABDCB1 /* HHTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		0437CC7F209C70FE00BC529C /* HHAdminController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAdminController.swift; sourceTree = "<group>"; };
 		0437CC81209C710B00BC529C /* HHMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHMessageController.swift; sourceTree = "<group>"; };
 		0437CC83209C756A00BC529C /* HHBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHBaseNavigationController.swift; sourceTree = "<group>"; };
+		04E1394A209EF9B600ABDCB1 /* Button+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Ext.swift"; sourceTree = "<group>"; };
+		04E1394F209F2F9D00ABDCB1 /* HHTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 				0437CC77209C6FE000BC529C /* HHTabBarController.swift */,
 				0437CC79209C705200BC529C /* HHBaseController.swift */,
 				0437CC83209C756A00BC529C /* HHBaseNavigationController.swift */,
+				04E1394F209F2F9D00ABDCB1 /* HHTabBar.swift */,
 			);
 			path = Bsee;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				0437CC75209C6EC600BC529C /* Bundle+Ext.swift */,
+				04E1394A209EF9B600ABDCB1 /* Button+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -287,6 +293,8 @@
 				042A26A9209C4D7300300FF7 /* AppDelegate.swift in Sources */,
 				0437CC78209C6FE000BC529C /* HHTabBarController.swift in Sources */,
 				0437CC7A209C705200BC529C /* HHBaseController.swift in Sources */,
+				04E1394B209EF9B600ABDCB1 /* Button+Ext.swift in Sources */,
+				04E13950209F2F9D00ABDCB1 /* HHTabBar.swift in Sources */,
 				0437CC84209C756A00BC529C /* HHBaseNavigationController.swift in Sources */,
 				0437CC80209C70FE00BC529C /* HHAdminController.swift in Sources */,
 			);
