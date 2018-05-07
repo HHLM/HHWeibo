@@ -12,8 +12,7 @@ class HHHomeController: HHBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "好友", imageName: "")
     }
 
     override func didReceiveMemoryWarning() {

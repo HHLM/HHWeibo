@@ -31,6 +31,22 @@ class HHTabBarController: UITabBarController,UITabBarControllerDelegate {
     /// 允许这个函数在运行时通过OC的消息机制被调用
     @objc private func clickComposedButton() {
         print("点我了")
+        let alert = UIAlertController.init(title: "哈哈", message: "点的中间的按钮", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel) { cancelAction in
+            print("取消了")
+        }
+        let sureAction = UIAlertAction.init(title: "确定", style: UIAlertActionStyle.destructive) { sureAction in
+            print("")
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(sureAction)
+        
+        
+        present(alert, animated: true) {
+            
+        }
+        
     }
     
     // MARK: - 懒加载控件
@@ -48,7 +64,7 @@ class HHTabBarController: UITabBarController,UITabBarControllerDelegate {
         // 让按钮宽一点点，能够解决手指触摸的容错问题 //tabBar两个按钮之间会有容错点
         let w = tabBar.bounds.width / CGFloat(count) - 1
         //水平向里面缩
-        customButton.frame = tabBar.bounds.insetBy(dx: 2*w, dy: -30)
+        customButton.frame = tabBar.bounds.insetBy(dx: 2*w, dy: 0)
         
         hh_tabBar.bringSubview(toFront: customButton)
         
@@ -106,7 +122,7 @@ class HHTabBarController: UITabBarController,UITabBarControllerDelegate {
         
         print(vc)
         
-        let nav = HHBaseNavigationController.init(rootViewController: vc)
+        let nav = HHBaseNavigationController(rootViewController: vc)
         
         vc.title = title;
         
@@ -125,8 +141,6 @@ class HHTabBarController: UITabBarController,UITabBarControllerDelegate {
         nav.tabBarItem.setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue) : font,NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):color], for: UIControlState.normal)
         
         nav.tabBarItem.setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue) : font, NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):selectColor], for: UIControlState.selected)
-        
-//        nav.tabBarItem.setBadgeTextAttributes([NSAttributedStringKey.font.rawValue : font], for:UIControlState.normal)
     
         return nav
     }

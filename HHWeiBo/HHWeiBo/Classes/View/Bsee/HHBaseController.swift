@@ -16,13 +16,13 @@ class HHBaseController: UIViewController {
 //
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
-        view.addSubview(navgationBar)
-        navgationBar.barTintColor = UIColor.red
-        navgationBar.layer.backgroundColor = UIColor.blue.cgColor
-        print(navgationBar,navgationBar)
-        
-        navgationBar.items = [navItem,navItem]
+        view.backgroundColor = kColorRandom()
+//        view.addSubview(navgationBar)
+//        navgationBar.barTintColor = UIColor.red
+//        navgationBar.layer.backgroundColor = UIColor.blue.cgColor
+//        print(navgationBar,navgationBar)
+//
+//        navgationBar.items = [navItem,navItem]
         
 //        self.navigationController?.navigationBar.layer.backgroundColor = UIColor.red.cgColor
     }
