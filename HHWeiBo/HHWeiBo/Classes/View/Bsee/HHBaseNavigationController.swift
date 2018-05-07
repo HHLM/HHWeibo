@@ -12,18 +12,30 @@ class HHBaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationBar.isHidden = false
-        // Do any additional setup after loading the view.
+        navigationBar.isHidden = true
+//
+//        let na = UINavigationBar.init(frame: CGRect.init(x: 0, y: 0, width: 440, height: 64))
+//        self.view .addSubview(na)
         
     }
     
-//    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-//        if viewController.childViewControllers.count > 0 {
-//            viewController.hidesBottomBarWhenPushed = true
-//        }
-//    }
-
-    override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
-        
+    @objc private func popToPresent() {
+        popViewController(animated:true)
+    }
+    
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if childViewControllers.count > 0 {
+            viewController.hidesBottomBarWhenPushed = true
+            
+            if let vc = viewController as? HHBaseController {
+                 var title = "返回"
+                if childViewControllers.count == 1 {
+                    title = childViewControllers.first?.title ?? " 返回"
+                }
+                vc.navItem.leftBarButtonItem = UIBarButtonItem.init(title:title, target:self, action: #selector(popToPresent),isBack:true)
+                
+            }
+        }
+        super.pushViewController(viewController, animated: animated)
     }
 }

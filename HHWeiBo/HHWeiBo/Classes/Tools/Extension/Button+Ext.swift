@@ -20,6 +20,7 @@ extension UIButton {
         setBackgroundImage(UIImage(named: backImageName+"_highlighted"), for: .highlighted)
         sizeToFit()
     }
+    ///带背景图和文字的按钮
     convenience  init(title: String,color:UIColor,backImageName:String) {
         self.init()
         setTitle(title, for: .normal)
@@ -37,29 +38,16 @@ extension UIButton {
         sizeToFit()
     }
     
-//    convenience init(title:String,fontSize:CGFloat = 16,target:AnyObject?,action:Selector,isBack:Bool = false) {
+    convenience init(title:String,fontSize:CGFloat = 16,target:AnyObject?,action:Selector,isBack:Bool = false)
+    {
+        self.init(title: title, fontSize: 16, color: .black, imageName: "1")
 //        let btn:UIButton = UIButton(title: title, color: .darkGray, imageName: "111")
-//        if isBack {
-//            btn.setImage(UIImage(named: ""), for: .normal)
-//            btn.setImage(UIImage(named: ""), for: .highlighted)
-//            btn.sizeToFit()
-//        }
-//            btn.addTarget(target, action: action, for: .touchUpInside)
-//        self.init()
-//    }
-    
-    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        let view = super.hitTest(point, with: event)
-        if view == nil {
-            for sub in self.subviews {
-                let point1 = sub.convert(point, from: self)
-                
-                if sub.bounds.contains(point1) {
-                    return sub
-                }
-            }
+        if isBack {
+            setImage(UIImage(named: "cp_back"), for: .normal)
+            setImage(UIImage(named: "cp_back"), for: .highlighted)
+            sizeToFit()
         }
-        return view
+            addTarget(target, action: action, for: .touchUpInside)
         
     }
     

@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 extension UIBarButtonItem {
-    convenience init(title:String,imageName:String) {
-        
-        let btn = UIButton.init(title: title, color: .darkGray, imageName: "")
+    ///带图片的barItem
+    convenience init(title:String,target:AnyObject?,action:Selector,isBack:Bool = false) {
+
+        let btn = UIButton(title: title, target: target, action: action,isBack:isBack)
         self.init(customView: btn)
-        
     }
 }

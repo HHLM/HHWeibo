@@ -20,7 +20,6 @@ public func kView_with(view:UIView) -> CGFloat {
     return view.frame.size.width
 }
 
-
 public func kView_heigth(view:UIView) -> CGFloat {
     return view.frame.size.height
 }

@@ -117,7 +117,7 @@ class HHTabBarController: UITabBarController,UITabBarControllerDelegate {
                 return HHBaseNavigationController.init(rootViewController: UIViewController())
         }
         
-        let vc = cla.init()
+        let vc:HHBaseController = cla.init()
         
         
         print(vc)
