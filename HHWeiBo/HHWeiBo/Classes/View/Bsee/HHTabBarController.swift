@@ -27,6 +27,15 @@ class HHTabBarController: UITabBarController,UITabBarControllerDelegate {
         //print(Bundle.main.infoDictionary ?? "")
     }
     
+    
+    /*
+        -：使用代码控制设置方向 ：好处在需要横屏的时候，单独处理
+        -：设置支持的方向之后，当前的控制器及其子控制器都会遵守这个方向
+     */
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    
     /// objc 保证方法私有，仅在当前对象被访问
     /// 允许这个函数在运行时通过OC的消息机制被调用
     @objc private func clickComposedButton() {

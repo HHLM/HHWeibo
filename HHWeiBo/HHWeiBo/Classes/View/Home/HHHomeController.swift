@@ -13,9 +13,12 @@ class HHHomeController: HHBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navItem.leftBarButtonItem = UIBarButtonItem.init(title: "好友", target: self, action: #selector(friendListVC))
-        vis.backgroundColor = UIColor.clear
+        navgationView.backgroundColor = UIColor.clear
         
     }
+    
+    
+    
     
     @objc private func friendListVC() {
         let vc = HHBaseController()

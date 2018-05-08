@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04040B4620A19195003F3C56 /* HHNetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04040B4520A19195003F3C56 /* HHNetworkTool.swift */; };
 		042A26A9209C4D7300300FF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A26A8209C4D7300300FF7 /* AppDelegate.swift */; };
 		042A26AB209C4D7300300FF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A26AA209C4D7300300FF7 /* ViewController.swift */; };
 		042A26AE209C4D7300300FF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042A26AC209C4D7300300FF7 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04040B4520A19195003F3C56 /* HHNetworkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHNetworkTool.swift; sourceTree = "<group>"; };
 		042A26A5209C4D7300300FF7 /* HHWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		042A26A8209C4D7300300FF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		042A26AA209C4D7300300FF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				04BB47F9209FE859005C1941 /* HHTool.swift */,
+				04040B4520A19195003F3C56 /* HHNetworkTool.swift */,
 			);
 			path = Macros;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				04BB47EE209FE6ED005C1941 /* HHBaseController.swift in Sources */,
 				04BB47EB209FE6ED005C1941 /* HHAdminController.swift in Sources */,
 				042A26AB209C4D7300300FF7 /* ViewController.swift in Sources */,
+				04040B4620A19195003F3C56 /* HHNetworkTool.swift in Sources */,
 				04BB47C4209FE6B3005C1941 /* HHBaseViewModel.swift in Sources */,
 				04BB47F3209FE709005C1941 /* HHBaseModel.swift in Sources */,
 				042A26A9209C4D7300300FF7 /* AppDelegate.swift in Sources */,
