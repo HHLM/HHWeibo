@@ -11,12 +11,20 @@ import UIKit
 //Swift类似于多继承 OC不支持多继承 用协议替代
 class HHBaseController: UIViewController {
 
-    lazy var navgationBar = UINavigationBar(frame: CGRect(x: 0, y:20, width: kWidth, height: 44))
+    //控制导航颜色
     lazy var navgationView:UIVisualEffectView = UIVisualEffectView.init(frame: CGRect.init(x: 0, y: 0, width: kWidth, height: 64))
+    //自定义导航条
+    lazy var navgationBar = UINavigationBar(frame: CGRect(x: 0, y:20, width: kWidth, height: 44))
+    
     lazy var navItem =  UINavigationItem()
     
+    //表格
     var tableView:UITableView?
+    //刷新控件
     var refershControl : UIRefreshControl?
+    //区分上拉刷新标记
+    var isPull:Bool = false
+    
     
     
     override func viewDidLoad() {
@@ -34,7 +42,8 @@ class HHBaseController: UIViewController {
     
     //MARK: 数据加载 - 具体有子类负责实现
     @objc func loadData()  {
-        
+        //不实现方法 就默认关闭
+        refershControl?.endRefreshing()
     }
     
     //MARK:重写 设置title方法
@@ -107,5 +116,29 @@ extension HHBaseController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // 1、判断是不是最后一行
+        // 2、row
+        let hh_row = indexPath.row
+        let hh_section = tableView.numberOfSections - 1
+        DLog("\(hh_section)")
+        
+        if hh_row < 0 || hh_section < 0 {
+            return
+        }
+        
+        let hh_count = tableView.numberOfRows(inSection: hh_section)
+        
+        if hh_row == (hh_count - 1) && !isPull  {
+            DLog("上拉刷新")
+            isPull = true
+            //开始刷新
+            loadData()
+        }
+        
+    }
+    
 }
+
 

@@ -30,11 +30,15 @@ class HHHomeController: HHBaseController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
             for i in 0..<5 {
                 //数据插入顶部
-                self.dataArray.insert(i.description, at: 0)
-                self.tableView?.reloadData()
-                self.refershControl?.endRefreshing()
-                
+                if self.isPull {
+                    self.dataArray.append("上拉\(i)")
+                }else {
+                    self.dataArray.insert(i.description, at: 0)
+                }
             }
+            self.tableView?.reloadData()
+            self.refershControl?.endRefreshing()
+            self.isPull = false
         }
         
         
