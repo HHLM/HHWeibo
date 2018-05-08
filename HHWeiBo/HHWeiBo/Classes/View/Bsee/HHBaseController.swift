@@ -8,20 +8,70 @@
 
 import UIKit
 
+//Swift类似于多继承 OC不支持多继承 用协议替代
 class HHBaseController: UIViewController {
 
     lazy var navgationBar = UINavigationBar(frame: CGRect(x: 0, y:20, width: kWidth, height: 44))
     lazy var navgationView:UIVisualEffectView = UIVisualEffectView.init(frame: CGRect.init(x: 0, y: 0, width: kWidth, height: 64))
     lazy var navItem =  UINavigationItem()
-//
+    
+    var tableView:UITableView?
+    var refershControl : UIRefreshControl?
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupUI()
+        loadData()
+        
+    }
+    
     @objc private func back(){
         let vc = HHBaseController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    //MARK: 数据加载 - 具体有子类负责实现
+    @objc func loadData()  {
+        
+    }
+    
+    //MARK:重写 设置title方法
+    override var title: String? {
+        didSet {
+            navItem.title = title
+        }
+    }
+}
+// MARK: -设置界面
+extension HHBaseController {
+    //不能写属性 不能重写父类，重写是子类的 扩展是对类的扩展
+    
+    func setupUI() {
         view.backgroundColor = UIColor.cyan
+        setNavgaitionBar()
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableView = UITableView.init(frame: view.bounds, style: .plain)
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        tableView?.contentInsetAdjustmentBehavior = .never
+        tableView?.contentInset = UIEdgeInsetsMake(navgationView.bounds.height, 0, tabBarController?.tabBar.bounds.height ?? 49, 0)
+        view.addSubview(tableView!)
+        view.insertSubview(tableView!, belowSubview: navgationView)
+        tableView?.tableFooterView = UIView()
+        tableView?.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        
+        refershControl = UIRefreshControl()
+        tableView?.addSubview(refershControl!)
+        refershControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        
+    }
+    
+    private func setNavgaitionBar() {
         
         view.addSubview(navgationView)
         view.addSubview(navgationBar)
@@ -30,7 +80,7 @@ class HHBaseController: UIViewController {
         
         //设置导航的字体大小和颜色
         navgationBar.titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):UIFont.systemFont(ofSize: 18),
-                                            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):UIColor.orange];
+                                            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):UIColor.black];
         //让自定义导航栏透明
         navgationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         //去掉自定义导航的那根线
@@ -45,11 +95,17 @@ class HHBaseController: UIViewController {
         navgationBar.tintColor = UIColor.red
         navItem.leftBarButtonItem?.setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):UIColor.white], for: .normal)
     }
+}
+//MARK: - 数据
+extension HHBaseController: UITableViewDelegate,UITableViewDataSource {
     
-    //重写
-    override var title: String? {
-        didSet {
-            navItem.title = title
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    //基类只准备方法 子类负责具体实现
+    //子类的数据源调用不需要 super 只保证语法正确
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
+

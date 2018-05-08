@@ -31,6 +31,7 @@ class HHTabBarController: UITabBarController,UITabBarControllerDelegate {
     /*
         -：使用代码控制设置方向 ：好处在需要横屏的时候，单独处理
         -：设置支持的方向之后，当前的控制器及其子控制器都会遵守这个方向
+        -：如果视频方向用模态展示
      */
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
@@ -103,7 +104,7 @@ class HHTabBarController: UITabBarController,UITabBarControllerDelegate {
         viewControllers = array
         
         //tabbar不透明
-        hh_tabBar.isTranslucent = false
+//        hh_tabBar.isTranslucent = false
         //未选中字体的颜色
         hh_tabBar.unselectedItemTintColor = UIColor.darkGray
         //选中字体颜色

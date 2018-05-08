@@ -8,21 +8,55 @@
 
 import UIKit
 
+
+//定义全局常量，尽量用private
+private let cellId = "cellId"
+
 class HHHomeController: HHBaseController {
+    
+    
+
+    private lazy var dataArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navItem.leftBarButtonItem = UIBarButtonItem.init(title: "好友", target: self, action: #selector(friendListVC))
-        navgationView.backgroundColor = UIColor.clear
+        navgationView.backgroundColor = UIColor.orange
+        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+    }
+ 
+    override func loadData() {
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            for i in 0..<5 {
+                //数据插入顶部
+                self.dataArray.insert(i.description, at: 0)
+                self.tableView?.reloadData()
+                self.refershControl?.endRefreshing()
+                
+            }
+        }
+        
         
     }
-    
-    
-    
-    
+
     @objc private func friendListVC() {
         let vc = HHBaseController()
         navigationController?.pushViewController(vc, animated: true)
     }
+}
+// MARK -- 数据源方法
+extension HHHomeController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataArray.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        cell.textLabel?.text = dataArray[indexPath.row]
+        return cell;
+    }
+}
 
+extension HHHomeController {
+    
 }
