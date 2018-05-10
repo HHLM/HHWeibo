@@ -25,8 +25,10 @@ class HHBaseController: UIViewController {
     //区分上拉刷新标记
     var isPull:Bool = false
     
+    //用户登录状态
+    var userLogon = true
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,7 +62,8 @@ extension HHBaseController {
     func setupUI() {
         view.backgroundColor = UIColor.cyan
         setNavgaitionBar()
-        setupTableView()
+        
+        userLogon ? setDefaultView() : setupTableView()
     }
     
     private func setupTableView() {
@@ -74,10 +77,17 @@ extension HHBaseController {
         tableView?.tableFooterView = UIView()
         tableView?.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
         
+        ///添加刷新控件
         refershControl = UIRefreshControl()
         tableView?.addSubview(refershControl!)
         refershControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
         
+    }
+    private func setDefaultView() {
+        let defaultView = UIView.init(frame: view.bounds)
+        defaultView.backgroundColor = .green
+        view.addSubview(defaultView)
+        view.insertSubview(defaultView, belowSubview: navgationView)
     }
     
     private func setNavgaitionBar() {
@@ -127,7 +137,6 @@ extension HHBaseController: UITableViewDelegate,UITableViewDataSource {
         if hh_row < 0 || hh_section < 0 {
             return
         }
-        
         let hh_count = tableView.numberOfRows(inSection: hh_section)
         
         if hh_row == (hh_count - 1) && !isPull  {
