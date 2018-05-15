@@ -6,21 +6,24 @@
     },
     {
       "resizing" : {
-        "mode" : "9-part",
+        "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "tile",
-          "width" : 1,
-          "height" : 1
+          "width" : 1
         },
         "cap-insets" : {
-          "bottom" : 9,
-          "top" : 9,
           "right" : 11,
           "left" : 10
         }
       },
       "idiom" : "universal",
       "filename" : "common_button_white_disable@2x.png",
+      "alignment-insets" : {
+        "top" : 27,
+        "left" : 0,
+        "bottom" : 29,
+        "right" : 0
+      },
       "scale" : "2x"
     },
     {

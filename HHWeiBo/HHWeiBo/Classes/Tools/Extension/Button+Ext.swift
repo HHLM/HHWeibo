@@ -11,7 +11,7 @@ import UIKit
 
 extension UIButton {
     
-    
+     ///带背景图的按钮
     convenience  init(imageName:String ,backImageName:String) {
         self.init()
         setImage(UIImage(named: imageName), for: .normal)
@@ -29,6 +29,7 @@ extension UIButton {
         
         sizeToFit()
     }
+     ///带图和文字的按钮
     convenience init(title: String, fontSize: CGFloat = 16, color: UIColor, imageName: String) {
         
         self.init(title: title, color: color, backImageName: imageName)
@@ -37,11 +38,10 @@ extension UIButton {
         
         sizeToFit()
     }
-    
+     ///带背景图和文字的按钮和点击事件
     convenience init(title:String,fontSize:CGFloat = 16,target:AnyObject?,action:Selector,isBack:Bool = false)
     {
         self.init(title: title, fontSize: 16, color: .black, imageName: "1")
-//        let btn:UIButton = UIButton(title: title, color: .darkGray, imageName: "111")
         if isBack {
             setImage(UIImage(named: "cp_back"), for: .normal)
             setImage(UIImage(named: "cp_back"), for: .highlighted)

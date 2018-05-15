@@ -23,6 +23,10 @@ class HHHomeController: HHBaseController {
         navItem.leftBarButtonItem = UIBarButtonItem.init(title: "好友", target: self, action: #selector(friendListVC))
         navgationView.backgroundColor = UIColor.orange
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        
+        let loginView = HHLoginStatusView.init(frame: view.bounds)
+        view.addSubview(loginView)
+        
     }
  
     override func loadData() {

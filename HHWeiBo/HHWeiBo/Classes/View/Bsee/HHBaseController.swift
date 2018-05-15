@@ -70,11 +70,17 @@ extension HHBaseController {
         tableView = UITableView.init(frame: view.bounds, style: .plain)
         tableView?.delegate = self
         tableView?.dataSource = self
-        tableView?.contentInsetAdjustmentBehavior = .never
+        if #available(iOS 11.0, *) {
+            tableView?.contentInsetAdjustmentBehavior = .never
+        } else {
+            // Fallback on earlier versions
+            automaticallyAdjustsScrollViewInsets = true
+        }
         tableView?.contentInset = UIEdgeInsetsMake(navgationView.bounds.height, 0, tabBarController?.tabBar.bounds.height ?? 49, 0)
         view.addSubview(tableView!)
         view.insertSubview(tableView!, belowSubview: navgationView)
         tableView?.tableFooterView = UIView()
+        //cell线条长度
         tableView?.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
         
         ///添加刷新控件

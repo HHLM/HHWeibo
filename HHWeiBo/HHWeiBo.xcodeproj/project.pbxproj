@@ -15,6 +15,8 @@
 		042A26B3209C4D7300300FF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042A26B1209C4D7300300FF7 /* LaunchScreen.storyboard */; };
 		042A26BC209C4F0400300FF7 /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042A26BA209C4F0400300FF7 /* Second.storyboard */; };
 		042A26C1209C4F6200300FF7 /* Fourth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042A26BF209C4F6200300FF7 /* Fourth.storyboard */; };
+		0437C0C820AAC75F00CFE9FD /* HHLoginStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437C0C720AAC75F00CFE9FD /* HHLoginStatusView.swift */; };
+		0437C0CA20AACDFD00CFE9FD /* UILabe+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437C0C920AACDFD00CFE9FD /* UILabe+Ext.swift */; };
 		0437CC66209C6B4900BC529C /* Third.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0437CC64209C6B4900BC529C /* Third.storyboard */; };
 		0437CC76209C6EC600BC529C /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437CC75209C6EC600BC529C /* Bundle+Ext.swift */; };
 		04BB47C4209FE6B3005C1941 /* HHBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB47C3209FE6B3005C1941 /* HHBaseViewModel.swift */; };
@@ -44,6 +46,8 @@
 		042A26B4209C4D7300300FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		042A26BB209C4F0400300FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = HHWeiBo/Base.lproj/Second.storyboard; sourceTree = "<group>"; };
 		042A26C0209C4F6200300FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = HHWeiBo/Base.lproj/Fourth.storyboard; sourceTree = "<group>"; };
+		0437C0C720AAC75F00CFE9FD /* HHLoginStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHLoginStatusView.swift; sourceTree = "<group>"; };
+		0437C0C920AACDFD00CFE9FD /* UILabe+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabe+Ext.swift"; sourceTree = "<group>"; };
 		0437CC65209C6B4900BC529C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Third.storyboard; sourceTree = "<group>"; };
 		0437CC72209C6CAA00BC529C /* HH-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HH-Bridge.h"; sourceTree = "<group>"; };
 		0437CC75209C6EC600BC529C /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
@@ -102,6 +106,14 @@
 			path = HHWeiBo;
 			sourceTree = "<group>";
 		};
+		0437C0C620AAC70200CFE9FD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0437C0C720AAC75F00CFE9FD /* HHLoginStatusView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		0437CC67209C6C0400BC529C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +164,7 @@
 				0437CC75209C6EC600BC529C /* Bundle+Ext.swift */,
 				04E1394A209EF9B600ABDCB1 /* Button+Ext.swift */,
 				04BB47FB209FEBC7005C1941 /* UIBarButtonItem+Ext.swift */,
+				0437C0C920AACDFD00CFE9FD /* UILabe+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -159,6 +172,7 @@
 		04BB47DB209FE6EC005C1941 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0437C0C620AAC70200CFE9FD /* Main */,
 				04BB47DC209FE6EC005C1941 /* Home */,
 				04BB47DE209FE6EC005C1941 /* Discover */,
 				04BB47E0209FE6EC005C1941 /* Admin */,
@@ -314,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BB47EF209FE6ED005C1941 /* HHTabBarController.swift in Sources */,
+				0437C0CA20AACDFD00CFE9FD /* UILabe+Ext.swift in Sources */,
 				04BB47F7209FE7A0005C1941 /* UILabel+Ext.m in Sources */,
 				04BB47EA209FE6ED005C1941 /* HHDiscoverController.swift in Sources */,
 				04BB47FC209FEBC7005C1941 /* UIBarButtonItem+Ext.swift in Sources */,
@@ -323,6 +338,7 @@
 				04BB47EE209FE6ED005C1941 /* HHBaseController.swift in Sources */,
 				04BB47EB209FE6ED005C1941 /* HHAdminController.swift in Sources */,
 				042A26AB209C4D7300300FF7 /* ViewController.swift in Sources */,
+				0437C0C820AAC75F00CFE9FD /* HHLoginStatusView.swift in Sources */,
 				04040B4620A19195003F3C56 /* HHNetworkTool.swift in Sources */,
 				04BB47C4209FE6B3005C1941 /* HHBaseViewModel.swift in Sources */,
 				04BB47F3209FE709005C1941 /* HHBaseModel.swift in Sources */,
@@ -494,12 +510,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YM2MZ34492;
 				INFOPLIST_FILE = HHWeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mac.HHWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "HHWeiBo/HH-Bridge.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -510,12 +527,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YM2MZ34492;
 				INFOPLIST_FILE = HHWeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mac.HHWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "HHWeiBo/HH-Bridge.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
