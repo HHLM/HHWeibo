@@ -128,7 +128,7 @@ extension HHLoginStatusView {
                                               toItem: nil,
                                               attribute: .notAnAttribute,
                                               multiplier: 1.0,
-                                              constant: 100))
+                                              constant: 90))
         
         addConstraint(NSLayoutConstraint.init(item: loginButton,
                                               attribute: .centerX,
@@ -136,7 +136,7 @@ extension HHLoginStatusView {
                                               toItem: self,
                                               attribute: .centerX,
                                               multiplier: 1.0,
-                                              constant: -100))
+                                              constant: -90))
         
         addConstraint(NSLayoutConstraint.init(item: loginButton,
                                               attribute: .top,
