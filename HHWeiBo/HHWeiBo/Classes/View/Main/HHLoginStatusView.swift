@@ -55,7 +55,19 @@ extension HHLoginStatusView {
             v.translatesAutoresizingMaskIntoConstraints = false
         }
         
+        
         //3、自动布局
+        /**
+         item : 需要约束的控件
+         attribute : 被约束控件 需要需要约束的属性
+         relateBy: 和参考控件的关系
+         toItem: 参考控件
+         attribute: 参考控件 约束的属性
+         multiplier:比例
+         constant: 偏移
+         
+         */
+        
         
         addConstraint(NSLayoutConstraint.init(item: iconView,
                                               attribute: .centerX,
@@ -64,7 +76,7 @@ extension HHLoginStatusView {
                                               attribute: .centerX,
                                               multiplier: 1.0,
                                               constant: 0))
-        
+       
         addConstraint(NSLayoutConstraint.init(item: iconView,
                                               attribute: .centerY,
                                               relatedBy: .equal,
