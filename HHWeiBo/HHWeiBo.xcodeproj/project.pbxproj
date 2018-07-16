@@ -19,6 +19,7 @@
 		0437C0CA20AACDFD00CFE9FD /* UILabe+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437C0C920AACDFD00CFE9FD /* UILabe+Ext.swift */; };
 		0437CC66209C6B4900BC529C /* Third.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0437CC64209C6B4900BC529C /* Third.storyboard */; };
 		0437CC76209C6EC600BC529C /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437CC75209C6EC600BC529C /* Bundle+Ext.swift */; };
+		04B94A8D20F75970001C6C23 /* NSObject+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B94A8C20F75970001C6C23 /* NSObject+Ext.m */; };
 		04BB47C4209FE6B3005C1941 /* HHBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB47C3209FE6B3005C1941 /* HHBaseViewModel.swift */; };
 		04BB47E9209FE6ED005C1941 /* HHHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB47DD209FE6EC005C1941 /* HHHomeController.swift */; };
 		04BB47EA209FE6ED005C1941 /* HHDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB47DF209FE6EC005C1941 /* HHDiscoverController.swift */; };
@@ -51,6 +52,8 @@
 		0437CC65209C6B4900BC529C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Third.storyboard; sourceTree = "<group>"; };
 		0437CC72209C6CAA00BC529C /* HH-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HH-Bridge.h"; sourceTree = "<group>"; };
 		0437CC75209C6EC600BC529C /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
+		04B94A8B20F75970001C6C23 /* NSObject+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Ext.h"; sourceTree = "<group>"; };
+		04B94A8C20F75970001C6C23 /* NSObject+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Ext.m"; sourceTree = "<group>"; };
 		04BB47C3209FE6B3005C1941 /* HHBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHBaseViewModel.swift; sourceTree = "<group>"; };
 		04BB47DD209FE6EC005C1941 /* HHHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHHomeController.swift; sourceTree = "<group>"; };
 		04BB47DF209FE6EC005C1941 /* HHDiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHDiscoverController.swift; sourceTree = "<group>"; };
@@ -238,6 +241,8 @@
 			children = (
 				04BB47F5209FE7A0005C1941 /* UILabel+Ext.h */,
 				04BB47F6209FE7A0005C1941 /* UILabel+Ext.m */,
+				04B94A8B20F75970001C6C23 /* NSObject+Ext.h */,
+				04B94A8C20F75970001C6C23 /* NSObject+Ext.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				0437C0C820AAC75F00CFE9FD /* HHLoginStatusView.swift in Sources */,
 				04040B4620A19195003F3C56 /* HHNetworkTool.swift in Sources */,
 				04BB47C4209FE6B3005C1941 /* HHBaseViewModel.swift in Sources */,
+				04B94A8D20F75970001C6C23 /* NSObject+Ext.m in Sources */,
 				04BB47F3209FE709005C1941 /* HHBaseModel.swift in Sources */,
 				042A26A9209C4D7300300FF7 /* AppDelegate.swift in Sources */,
 				04BB47ED209FE6ED005C1941 /* HHTabBar.swift in Sources */,
