@@ -12,9 +12,9 @@ import UIKit
 class HHBaseController: UIViewController {
 
     //控制导航颜色
-    lazy var navgationView:UIVisualEffectView = UIVisualEffectView.init(frame: CGRect.init(x: 0, y: 0, width: kWidth, height: 64))
+    lazy var navgationView:UIVisualEffectView = UIVisualEffectView.init(frame: CGRect.init(x: 0, y: 0, width: kWidth, height: kStatusBar + 44))
     //自定义导航条
-    lazy var navgationBar = UINavigationBar(frame: CGRect(x: 0, y:20, width: kWidth, height: 44))
+    lazy var navgationBar = UINavigationBar(frame: CGRect(x: 0, y:kStatusBar, width: kWidth, height: 44))
     
     lazy var navItem =  UINavigationItem()
     

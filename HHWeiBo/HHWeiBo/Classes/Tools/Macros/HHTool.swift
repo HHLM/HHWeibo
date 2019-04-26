@@ -12,6 +12,8 @@ import Foundation
 
 // MARK: - 尺寸大小
 
+public var kStatusBar = UIApplication.shared.statusBarFrame.height
+
 public let kWidth = UIScreen.main.bounds.size.width
 
 public let kHeight = UIScreen.main.bounds.size.height
